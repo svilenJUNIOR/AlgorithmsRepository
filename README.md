@@ -1,1 +1,1 @@
-Implementing different algorithms in C#
+Implementing different algorithms in C#, with examples and explanation for each one.
