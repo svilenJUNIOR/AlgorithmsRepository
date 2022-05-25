@@ -134,7 +134,29 @@
         }
         static int[] MergeSort(int[] numbers, int[] leftSide, int[] rightSide) 
         {
-            return null;
+            int originalArrIndex = 0;
+            int leftSideIndex = 0;
+            int rightSideIndex = 0;
+
+            int leftSideCount = leftSide.Length;
+            int rightSideCount = rightSide.Length;
+
+            while (leftSideIndex < leftSideCount && rightSideIndex < rightSideCount)
+            {
+                if (leftSide[leftSideIndex] <= rightSide[rightSideIndex])
+                {
+                    numbers[originalArrIndex] = leftSide[leftSideIndex];
+                    leftSideIndex++;
+                }
+
+                else
+                {
+                    numbers[originalArrIndex] = rightSide[rightSideIndex];
+                    rightSideIndex++;
+                }
+
+                originalArrIndex++;
+            }
         }
     }
 }
