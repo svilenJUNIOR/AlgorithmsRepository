@@ -13,6 +13,9 @@
         }
 
         ////////////////////////////////////// BINARY SEARCH /////////////////////////////////////////////////////////
+
+        // https://www.youtube.com/watch?v=P3YID7liBug
+
         /// <summary>
         /// 
         /// The role of binary search is to find something very fast.
@@ -121,6 +124,97 @@
 
 
         ////////////////////////////////////// MERGE SORT /////////////////////////////////////////////////////////
+
+        // https://www.youtube.com/watch?v=bOk35XmHPKs
+
+        /// <summary>
+        /// 
+        /// The merge sort algorithm consists of three steps
+        /// 
+        /// 1. Splitting the array into many arrays
+        /// 2. Sorting all of the little arrays
+        /// 3. Merging the little arrays back into one big array
+        /// 
+        /// Ex: We have an input array of [1,4,6,2,7,2,6,8]
+        /// Now we split until we have many arrays consisting of only 2 elements
+        /// 
+        ///                            [1,4,6,2,7,2,6,8]
+        ///                   [1,4,6,2]                 [7,2,6,8]
+        ///               [1,4]       [6,2]         [7,2]        [6,8]
+        ///               
+        /// After we are done, we have to sort each and every one
+        /// 
+        /// 
+        ///                   [1,4,6,2,7,2,6,8] - input
+        ///           [1,4,6,2]                 [7,2,6,8]
+        ///       [1,4]       [6,2]         [7,2]        [6,8]
+        ///       [1,4]       [2,6]         [2,7]        [6,8]
+        ///           [1,2,4,6]                  [2,6,7,8]
+        ///                    [1,2,2,4,6,6,7,8] - output
+        ///                    
+        /// HOW?
+        /// 
+        /// FIRST PART:
+        /// Split(int[] numbers) method
+        /// which takes the input array and Splits it into many 2 elements array
+        /// 
+        /// 1. We check if the length is less then two, because if it is, that means one of two things
+        /// a) the array has only one element
+        /// b) it's empty
+        /// Both things mean we don't need to continue.
+        /// 
+        /// 2. We get the middle point 
+        /// 
+        /// 3. We created two arrays (left and right)
+        /// a)  Array is [1,2,3,4]
+        /// Middle Point is length / 2 -> 4 / 2 = 2
+        /// Left array is [1,2]
+        /// Right array is [3,4]
+        ///  
+        /// b) Array is [1,2,3,4,5]
+        /// Middle Point is length / 2 -> 5 / 2 = 2,5 (so 2)
+        /// Left array is [1,2]
+        /// Right array is [3,4,5]
+        /// 
+        /// 4. We fill the arrays with array.copy
+        /// 
+        /// 5. We call the method again (recursion)
+        /// 
+        /// 6. Then each and every time we call the second method:
+        /// 
+        /// SECOND PART:
+        /// MergeSort(int[] numbers, int[] leftSide, int[] rightSide)
+        /// 
+        /// Array is [1,3,2,4,8,5,7,6]
+        /// 
+        /// After the split from the previous step this is what we pass to the second method
+        /// ( [1,3,2,4,8,5,7,6],  [1,3,2,4], [8,5,7,6])
+        ///   original array,     left side, right side
+        /// 
+        /// 1. Now we create three indexes and take the count of the left and side arrays
+        /// 
+        /// 2. We sort
+        /// 
+        /// While (if the index is bigger than the count you should know what happens)
+        /// {
+        ///     if (leftSide[0] <= rightSide[0])
+        ///         numbers[0] = leftSide[0]
+        ///         leftSideIndex++;
+        ///     
+        /// This means that first element of the left array is smaller
+        /// Then the first element of the right array so we put it as 
+        /// the first element of the original array, and we continue
+        /// to the second element of the left array so we can compare it 
+        /// to the first element of the right array. 
+        /// 
+        ///     else{does the same thing for the right side array}
+        /// }
+        /// 
+        /// While (on of the indexes is still smaller than the count which means we have exess element)
+        /// so we just put it in the original array.
+        /// 
+        /// </summary>
+
         static int[] Split(int[] numbers)
         {
             if (numbers.Length < 2) return numbers;
@@ -181,6 +275,7 @@
 
             return numbers;
         }
+
         ////////////////////////////////////// MERGE SORT /////////////////////////////////////////////////////////
     }
 }
