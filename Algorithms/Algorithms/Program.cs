@@ -5,13 +5,14 @@
         static void Main(string[] Args)
         {
             // merge sort
-            int[] numbers = new int[] { 4, 5, 26, 246, 34, 7, 352, 7, 2454, 72 };
-            Console.WriteLine(String.Join(" ", Split(numbers)));
+            // int[] numbers = new int[] { 4, 5, 26, 246, 34, 7, 352, 7, 2454, 72 };
+            // Console.WriteLine(String.Join(" ", Split(numbers)));
 
             // binary search
             // BinarySearch();
         }
 
+        ////////////////////////////////////// BINARY SEARCH /////////////////////////////////////////////////////////
         /// <summary>
         /// 
         /// The role of binary search is to find something very fast.
@@ -116,7 +117,10 @@
             if (found) Console.WriteLine("Number Found!");
             else Console.WriteLine("Number does not exists!");
         }
+        ////////////////////////////////////// BINARY SEARCH /////////////////////////////////////////////////////////
 
+
+        ////////////////////////////////////// MERGE SORT /////////////////////////////////////////////////////////
         static int[] Split(int[] numbers)
         {
             if (numbers.Length < 2) return numbers;
@@ -177,5 +181,6 @@
 
             return numbers;
         }
+        ////////////////////////////////////// MERGE SORT /////////////////////////////////////////////////////////
     }
 }
