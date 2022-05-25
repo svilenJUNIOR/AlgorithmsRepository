@@ -4,7 +4,9 @@
     {
         static void Main(string[] Args)
         {
-           
+            // merge sort
+            int[] numbers = new int[] { 4, 5, 26, 246, 34, 7, 352, 7, 2454, 72 };
+            Console.WriteLine(String.Join(" ", Split(numbers)));
 
             // binary search
             // BinarySearch();
@@ -132,7 +134,7 @@
 
             return MergeSort(numbers, leftSide, rightSide);
         }
-        static int[] MergeSort(int[] numbers, int[] leftSide, int[] rightSide) 
+        static int[] MergeSort(int[] numbers, int[] leftSide, int[] rightSide)
         {
             int originalArrIndex = 0;
             int leftSideIndex = 0;
@@ -156,7 +158,24 @@
                 }
 
                 originalArrIndex++;
+
+                while (leftSideIndex < leftSideCount)
+                {
+                    numbers[originalArrIndex] = leftSide[leftSideIndex];
+                    originalArrIndex++;
+                    leftSideIndex++;
+                }
+
+                while (rightSideIndex < rightSideCount)
+                {
+                    numbers[originalArrIndex] = rightSide[rightSideIndex];
+                    originalArrIndex++;
+                    rightSideIndex++;
+                }
+
             }
+
+            return numbers;
         }
     }
 }
