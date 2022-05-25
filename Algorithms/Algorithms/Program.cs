@@ -1,4 +1,4 @@
-﻿namespace Algoritms
+﻿namespace Algorithms
 {
     class Program
     {
