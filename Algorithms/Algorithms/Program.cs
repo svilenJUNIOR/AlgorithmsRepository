@@ -4,8 +4,12 @@
     {
         static void Main(string[] Args)
         {
-            BinarySearch();
+           
+
+            // binary search
+            // BinarySearch();
         }
+
         /// <summary>
         /// 
         /// The role of binary search is to find something very fast.
@@ -109,6 +113,28 @@
 
             if (found) Console.WriteLine("Number Found!");
             else Console.WriteLine("Number does not exists!");
+        }
+
+        static int[] Split(int[] numbers)
+        {
+            if (numbers.Length < 2) return numbers;
+
+            int midPoint = numbers.Length / 2;
+
+            int[] leftSide = new int[midPoint];
+            int[] rightSide = new int[numbers.Length - midPoint];
+
+            Array.Copy(numbers, 0, leftSide, 0, midPoint);
+            Array.Copy(numbers, midPoint, rightSide, 0, numbers.Length - midPoint);
+
+            Split(leftSide);
+            Split(rightSide);
+
+            return MergeSort(numbers, leftSide, rightSide);
+        }
+        static int[] MergeSort(int[] numbers, int[] leftSide, int[] rightSide) 
+        {
+            return null;
         }
     }
 }
