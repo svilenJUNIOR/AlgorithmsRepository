@@ -4,9 +4,9 @@
     {
         static void Main(string[] Args)
         {
-            // merge sort
-            // int[] numbers = new int[] { 4, 5, 26, 246, 34, 7, 352, 7, 2454, 72 };
-            // Console.WriteLine(String.Join(" ", Split(numbers)));
+            //merge sort
+            int[] numbers = new int[] { 4, 5, 26, 246, 34, 7, 352, 7, 2454, 72 };
+            Console.WriteLine(String.Join(" ", Split(numbers)));
 
             // binary search
             // BinarySearch();
@@ -19,7 +19,7 @@
         /// <summary>
         /// 
         /// The role of binary search is to find something very fast.
-        /// The principle of the algoritm as quite simple, divide the array (in this case list)
+        /// The principle of the algoritm is quite simple, divide the array (in this case list)
         /// until you find the element you are looking for.
         /// 
         /// The implemention consists of several variables
@@ -48,10 +48,10 @@
         /// At the beginning of each cycle we calculate the middlePoint (which is just an index), then we check
         /// if the element in that index is the element we are looking for. If it is, we end the program.
         /// 
-        /// If not we check is the 'x' element is smaller than the middlePoint if it is, that means that
+        /// If not we check if the 'x' element is smaller than the middlePoint if it is, that means that
         /// the element WILL ALWAYS BE ON THE LEFT SIDE OF THE MIDDLE POINT. In that case with don't need
         /// the part of the array that's on the right side of the middlePoint, so we just ignore it.
-        /// The same thing happens if 'x element is bigget than the middlePoint', which means that the 'x' element
+        /// The same thing happens if 'x element is bigger than the middlePoint, which means that the 'x' element
         /// WILL ALWAYS BE ON THE RIGHT SIDE OF THE ARRAY,so we ignore the left part.
         /// 
         /// HOW THAT HAPPENS
@@ -165,7 +165,7 @@
         /// 
         /// 2. We get the middle point 
         /// 
-        /// 3. We created two arrays (left and right)
+        /// 3. We create two arrays (left and right)
         /// a)  Array is [1,2,3,4]
         /// Middle Point is length / 2 -> 4 / 2 = 2
         /// Left array is [1,2]
@@ -201,8 +201,8 @@
         ///         numbers[0] = leftSide[0]
         ///         leftSideIndex++;
         ///     
-        /// This means that first element of the left array is smaller
-        /// Then the first element of the right array so we put it as 
+        /// This means that the first element of the left array is smaller
+        /// Than the first element of the right array so we put it as 
         /// the first element of the original array, and we continue
         /// to the second element of the left array so we can compare it 
         /// to the first element of the right array. 
@@ -256,21 +256,20 @@
                 }
 
                 originalArrIndex++;
+            }
 
-                while (leftSideIndex < leftSideCount)
-                {
-                    numbers[originalArrIndex] = leftSide[leftSideIndex];
-                    originalArrIndex++;
-                    leftSideIndex++;
-                }
+            while (leftSideIndex < leftSideCount)
+            {
+                numbers[originalArrIndex] = leftSide[leftSideIndex];
+                originalArrIndex++;
+                leftSideIndex++;
+            }
 
-                while (rightSideIndex < rightSideCount)
-                {
-                    numbers[originalArrIndex] = rightSide[rightSideIndex];
-                    originalArrIndex++;
-                    rightSideIndex++;
-                }
-
+            while (rightSideIndex < rightSideCount)
+            {
+                numbers[originalArrIndex] = rightSide[rightSideIndex];
+                originalArrIndex++;
+                rightSideIndex++;
             }
 
             return numbers;
